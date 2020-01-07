@@ -6,8 +6,8 @@ import java.util.Collection;
 import java.util.Collections;
 
 // class name must match plugin name
-@LogstashPlugin(name = "vskit_log_filter")
-public class VskitLogFilter implements Filter {
+@LogstashPlugin(name = "random_string_filter")
+public class RandomStringFilter implements Filter {
 
     public static final PluginConfigSpec<String> SOURCE_CONFIG =
             PluginConfigSpec.stringSetting("source", "msg");
@@ -15,7 +15,7 @@ public class VskitLogFilter implements Filter {
     private String id;
     private String sourceField;
 
-    public VskitLogFilter(String id, Configuration config, Context context) {
+    public RandomStringFilter(String id, Configuration config, Context context) {
         // constructors should validate configuration options
         this.id = id;
         this.sourceField = config.get(SOURCE_CONFIG);
